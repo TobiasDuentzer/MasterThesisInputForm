@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="definitions_7645006b-7f05-422e-8721-8284f8557202" targetNamespace="http://camunda.org/examples" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="Process_1" isExecutable="true">
+    <startEvent id="startEvent"/>
+    <serviceTask camunda:class="com.example.MyServiceTask" id="task1" name="Name1"/>
+    <serviceTask camunda:class="com.example.MyServiceTask" id="task3" name="Name3"/>
+    <serviceTask camunda:class="com.example.MyServiceTask" id="task5" name="Name5"/>
+    <endEvent id="endEvent"/>
+    <sequenceFlow id="flow_task1_to_task3" sourceRef="task1" targetRef="task3"/>
+    <sequenceFlow id="flow_task3_to_task5" sourceRef="task3" targetRef="task5"/>
+    <sequenceFlow id="flow_task5_to_end" sourceRef="task5" targetRef="endEvent"/>
+  </process>
+</definitions>

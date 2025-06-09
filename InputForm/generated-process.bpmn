@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="definitions_9434551a-797b-4bf1-9fab-52c6ce6f88e5" targetNamespace="http://example.com/bpmn" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process" isExecutable="true">
+    <startEvent id="start" name="Start"/>
+    <endEvent id="end" name="End"/>
+    <userTask camunda:assignee="Assignee1" id="task1" name="TaskName1"/>
+    <userTask camunda:assignee="Assignee2" id="task2" name="TaskName2"/>
+    <userTask camunda:assignee="Assignee3" id="task3" name="TaskName3"/>
+    <userTask camunda:assignee="Assignee4" id="task4" name="TaskName4"/>
+    <userTask camunda:assignee="Assignee5" id="task5" name="TaskName5"/>
+    <parallelGateway id="gateway1" name="gateway1"/>
+    <sequenceFlow id="start_to_task1" sourceRef="start" targetRef="task1"/>
+    <sequenceFlow id="task1_to_task2" sourceRef="task1" targetRef="task2"/>
+    <sequenceFlow id="task2_to_gateway1" sourceRef="task2" targetRef="gateway1"/>
+    <sequenceFlow id="gateway1_to_task3" sourceRef="gateway1" targetRef="task3">
+      <conditionExpression id="conditionExpression_3c1d6738-cd89-4aa2-9d21-34e3fb5d8715"/>
+    </sequenceFlow>
+    <sequenceFlow id="gateway1_to_task4" sourceRef="gateway1" targetRef="task4">
+      <conditionExpression id="conditionExpression_829f6176-d911-4092-9e8d-ea5ff83ff519"/>
+    </sequenceFlow>
+    <sequenceFlow id="task3_to_task5" sourceRef="task3" targetRef="task5"/>
+    <sequenceFlow id="task4_to_task5" sourceRef="task4" targetRef="task5"/>
+    <sequenceFlow id="task5_to_end" sourceRef="task5" targetRef="end"/>
+  </process>
+</definitions>

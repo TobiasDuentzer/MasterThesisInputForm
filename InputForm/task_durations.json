@@ -1,0 +1,19 @@
+{
+  "taskDurations": {
+    "TaskName1": {
+      "duration": "2m"
+    },
+    "TaskName2": {
+      "duration": "2m"
+    },
+    "TaskName3": {
+      "duration": "2m"
+    },
+    "TaskName4": {
+      "duration": "2m"
+    },
+    "TaskName5": {
+      "duration": "2m"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+module-info.class
+com\example\inputform\HelloApplication.class
+com\example\inputform\HelloController.class
+InputFormPackage\Simulation.class
+InputFormPackage\TestingBPMN.class
+InputFormPackage\AvailableResource.class
+InputFormPackage\InputForm.class
+InputFormPackage\Resource.class
+InputFormPackage\FollowingTask.class
+InputFormPackage\Task.class

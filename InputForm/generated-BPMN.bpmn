@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_b4aedd32-63c5-487e-bb97-7fee650e476f" targetNamespace="http://example.com/bpmn">
+    
+  <process id="process" isExecutable="true">
+        
+    <startEvent id="start" name="Start"/>
+        
+    <endEvent id="end" name="End"/>
+        
+    <userTask camunda:assignee="Res1" id="task1" name="Name1"/>
+        
+    <userTask camunda:assignee="Res1" id="task2" name="Name2"/>
+        
+    <userTask camunda:assignee="Res2" id="task3" name="Name3"/>
+        
+    <userTask camunda:assignee="Res3" id="task4" name="Name4"/>
+        
+    <userTask camunda:assignee="Res4" id="task5" name="Name5"/>
+        
+    <exclusiveGateway id="gateway1" name="gateway1"/>
+        
+    <sequenceFlow id="start_to_task1" sourceRef="start" targetRef="task1"/>
+        
+    <sequenceFlow id="task1_to_task2" sourceRef="task1" targetRef="task2"/>
+        
+    <sequenceFlow id="task2_to_gateway1" sourceRef="task2" targetRef="gateway1"/>
+        
+    <sequenceFlow id="gateway1_to_task3" name="0.4" sourceRef="gateway1" targetRef="task3">
+            
+      <conditionExpression id="conditionExpression_48b1d270-975a-4763-8e1f-a415adbe026c">0.4</conditionExpression>
+          
+    </sequenceFlow>
+        
+    <sequenceFlow id="gateway1_to_task4" name="0.6" sourceRef="gateway1" targetRef="task4">
+            
+      <conditionExpression id="conditionExpression_86c8f4c6-0a26-48dd-a417-6b2342bf41c1">0.6</conditionExpression>
+          
+    </sequenceFlow>
+        
+    <sequenceFlow id="task3_to_task5" sourceRef="task3" targetRef="task5"/>
+        
+    <sequenceFlow id="task4_to_task5" sourceRef="task4" targetRef="task5"/>
+        
+    <sequenceFlow id="task5_to_end" sourceRef="task5" targetRef="end"/>
+      
+  </process>
+    
+  <bpmndi:BPMNDiagram id="BPMNDiagram_64294446-e65b-4994-955a-3c1763d77b42" name="Process Diagram">
+        
+    <bpmndi:BPMNPlane bpmnElement="process" id="BPMNPlane_0d0dfd89-4220-4915-a6ae-81021212c040">
+            
+      <bpmndi:BPMNShape bpmnElement="start" id="BPMNShape_d9d3a7d9-8558-4040-ba80-b27f902b0adf">
+                
+        <dc:Bounds height="80.0" width="100.0" x="100.0" y="300.0"/>
+              
+      </bpmndi:BPMNShape>
+            
+      <bpmndi:BPMNShape bpmnElement="task1" id="BPMNShape_ec9a63a8-e817-469c-aafa-a165c6451b64">
+                
+        <dc:Bounds height="80.0" width="100.0" x="300.0" y="300.0"/>
+              
+      </bpmndi:BPMNShape>
+            
+      <bpmndi:BPMNShape bpmnElement="task2" id="BPMNShape_ae856ca3-98e3-483c-b3d1-8a24256baab2">
+                
+        <dc:Bounds height="80.0" width="100.0" x="500.0" y="300.0"/>
+              
+      </bpmndi:BPMNShape>
+            
+      <bpmndi:BPMNShape bpmnElement="gateway1" id="BPMNShape_cb1a517f-5b77-4fbb-8c55-7b9b725f549d">
+                
+        <dc:Bounds height="80.0" width="100.0" x="700.0" y="300.0"/>
+              
+      </bpmndi:BPMNShape>
+            
+      <bpmndi:BPMNShape bpmnElement="task3" id="BPMNShape_68837ac0-ae8d-40ae-ac24-4ae2dd05a2df">
+                
+        <dc:Bounds height="80.0" width="100.0" x="900.0" y="300.0"/>
+              
+      </bpmndi:BPMNShape>
+            
+      <bpmndi:BPMNShape bpmnElement="task4" id="BPMNShape_beab280e-fcc9-4a08-ba6a-bad11392fcb8">
+                
+        <dc:Bounds height="80.0" width="100.0" x="900.0" y="450.0"/>
+              
+      </bpmndi:BPMNShape>
+            
+      <bpmndi:BPMNShape bpmnElement="task5" id="BPMNShape_cd38c7c5-7f4c-48d2-82f3-738d3b324849">
+                
+        <dc:Bounds height="80.0" width="100.0" x="1100.0" y="300.0"/>
+              
+      </bpmndi:BPMNShape>
+            
+      <bpmndi:BPMNShape bpmnElement="end" id="BPMNShape_c036e2d0-cfeb-47c7-8580-bbd519d05faf">
+                
+        <dc:Bounds height="80.0" width="100.0" x="1300.0" y="300.0"/>
+              
+      </bpmndi:BPMNShape>
+            
+      <bpmndi:BPMNEdge bpmnElement="start_to_task1" id="BPMNEdge_bbed64c9-f912-428c-a3a6-b3a34f51a211">
+                
+        <di:waypoint x="200.0" y="340.0"/>
+                
+        <di:waypoint x="300.0" y="340.0"/>
+              
+      </bpmndi:BPMNEdge>
+            
+      <bpmndi:BPMNEdge bpmnElement="task1_to_task2" id="BPMNEdge_9b7ad295-9756-4dc1-aa71-cae61c88293e">
+                
+        <di:waypoint x="400.0" y="340.0"/>
+                
+        <di:waypoint x="500.0" y="340.0"/>
+              
+      </bpmndi:BPMNEdge>
+            
+      <bpmndi:BPMNEdge bpmnElement="task2_to_gateway1" id="BPMNEdge_a5f1c2c4-94a9-4a74-8b17-085fe9798a1b">
+                
+        <di:waypoint x="600.0" y="340.0"/>
+                
+        <di:waypoint x="700.0" y="340.0"/>
+              
+      </bpmndi:BPMNEdge>
+            
+      <bpmndi:BPMNEdge bpmnElement="gateway1_to_task3" id="BPMNEdge_b62b181f-f8c0-4f50-90c2-7fd541bd4341">
+                
+        <di:waypoint x="800.0" y="340.0"/>
+                
+        <di:waypoint x="900.0" y="340.0"/>
+              
+      </bpmndi:BPMNEdge>
+            
+      <bpmndi:BPMNEdge bpmnElement="gateway1_to_task4" id="BPMNEdge_2620b7ff-5953-4f48-af94-c7c1210bd9d6">
+                
+        <di:waypoint x="800.0" y="340.0"/>
+                
+        <di:waypoint x="900.0" y="490.0"/>
+              
+      </bpmndi:BPMNEdge>
+            
+      <bpmndi:BPMNEdge bpmnElement="task3_to_task5" id="BPMNEdge_e2ed1a3f-653d-4720-8237-ef499130c523">
+                
+        <di:waypoint x="1000.0" y="340.0"/>
+                
+        <di:waypoint x="1100.0" y="340.0"/>
+              
+      </bpmndi:BPMNEdge>
+            
+      <bpmndi:BPMNEdge bpmnElement="task4_to_task5" id="BPMNEdge_b1f4a566-3a98-4d09-814e-898eebf54877">
+                
+        <di:waypoint x="1000.0" y="490.0"/>
+                
+        <di:waypoint x="1100.0" y="340.0"/>
+              
+      </bpmndi:BPMNEdge>
+            
+      <bpmndi:BPMNEdge bpmnElement="task5_to_end" id="BPMNEdge_f0e391df-3ae4-40d5-a9c6-5c242b8f11de">
+                
+        <di:waypoint x="1200.0" y="340.0"/>
+                
+        <di:waypoint x="1300.0" y="340.0"/>
+              
+      </bpmndi:BPMNEdge>
+          
+    </bpmndi:BPMNPlane>
+      
+  </bpmndi:BPMNDiagram>
+  <qbp:processSimulationInfo xmlns:qbp="http://www.qbp-simulator.com/Schema201212" currency="EUR" id="qbp_e6a1da1e-1b26-b7ae-66cd-ca891d9ea7ef" processInstances="4" startDateTime="2025-05-22T07:00:00.000Z">
+    <qbp:arrivalRateDistribution arg1="0" arg2="0" mean="5" type="FIXED">
+      <qbp:timeUnit>seconds</qbp:timeUnit>
+    </qbp:arrivalRateDistribution>
+    <qbp:timetables>
+      <qbp:timetable default="true" id="QBP_DEFAULT_TIMETABLE" name="Default">
+        <qbp:rules>
+          <qbp:rule fromTime="09:00:00.000+00:00" fromWeekDay="MONDAY" toTime="17:00:00.000+00:00" toWeekDay="FRIDAY"/>
+        </qbp:rules>
+      </qbp:timetable>
+    </qbp:timetables>
+    <qbp:resources/>
+    <qbp:elements>
+      <qbp:element elementId="task1" id="elementTask1">
+        <qbp:durationDistribution arg1="NaN" arg2="NaN" mean="300" type="FIXED">
+          <qbp:timeUnit>minutes</qbp:timeUnit>
+        </qbp:durationDistribution>
+        <qbp:resourceIds>
+          <qbp:resourceId/>
+        </qbp:resourceIds>
+      </qbp:element>
+      <qbp:element elementId="task2" id="elementTask2">
+        <qbp:durationDistribution arg1="NaN" arg2="NaN" mean="0" type="FIXED">
+          <qbp:timeUnit>minutes</qbp:timeUnit>
+        </qbp:durationDistribution>
+        <qbp:resourceIds>
+          <qbp:resourceId/>
+        </qbp:resourceIds>
+      </qbp:element>
+      <qbp:element elementId="task3" id="elementTask3">
+        <qbp:durationDistribution arg1="NaN" arg2="NaN" mean="0" type="FIXED">
+          <qbp:timeUnit>minutes</qbp:timeUnit>
+        </qbp:durationDistribution>
+        <qbp:resourceIds>
+          <qbp:resourceId/>
+        </qbp:resourceIds>
+      </qbp:element>
+      <qbp:element elementId="task4" id="elementTask4">
+        <qbp:durationDistribution arg1="NaN" arg2="NaN" mean="0" type="FIXED">
+          <qbp:timeUnit>minutes</qbp:timeUnit>
+        </qbp:durationDistribution>
+        <qbp:resourceIds>
+          <qbp:resourceId/>
+        </qbp:resourceIds>
+      </qbp:element>
+      <qbp:element elementId="task5" id="elementTask5">
+        <qbp:durationDistribution arg1="NaN" arg2="NaN" mean="0" type="FIXED">
+          <qbp:timeUnit>minutes</qbp:timeUnit>
+        </qbp:durationDistribution>
+        <qbp:resourceIds>
+          <qbp:resourceId/>
+        </qbp:resourceIds>
+      </qbp:element>
+    </qbp:elements>
+    <qbp:sequenceFlows>
+      <qbp:sequenceFlow elementId="gateway1_to_task3" executionProbability="0.4"/>
+      <qbp:sequenceFlow elementId="gateway1_to_task4" executionProbability="0.6"/>
+    </qbp:sequenceFlows>
+    <qbp:statsOptions/>
+  </qbp:processSimulationInfo>
+  
+</definitions>
