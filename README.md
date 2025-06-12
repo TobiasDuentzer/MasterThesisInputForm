@@ -1,8 +1,8 @@
 # Automated Business Workflow Simulation Based On An Input-Form
 This repository holds the code for the input form implementations of my master thesis.
 
-General concept under MasterThesisInputForm/blob/main/InputForm/src/main/java/InputFormPackage/InputForm.java
-BIMP specific implementation under MasterThesisInputForm/blob/main/InputForm/src/main/java/InputFormPackage/InputFormBIMP.java
+General concept under `MasterThesisInputForm/blob/main/InputForm/src/main/java/InputFormPackage/InputForm.java`
+BIMP specific implementation under `MasterThesisInputForm/blob/main/InputForm/src/main/java/InputFormPackage/InputFormBIMP.java`
 
 This project provides a dynamic JavaFX-based input form to collect business workflow and simulation information . It is designed to streamline the creation and editing of BPMN-compatible simulation models with a user-friendly graphical interface. The BIMP specific version ist tailored to the BIMP online simulator [https://bimp.cs.ut.ee/simulator/]. This version when filled in correctly, produces a .bpmn file which can directly be imported into BIMP and consequently simulated. False entry can result in a file which is unable to be imported!
 
